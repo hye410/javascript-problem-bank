@@ -21,14 +21,20 @@
  */
 
 let increment = 0;
+increment += 1;
 let decrement = 0;
+decrement -= 1;
 
 const num1 = 10;
 
 let add = 0;
+add = add += num1;
 let subtract = 20;
+subtract = subtract -= num1;
 let multiply = 1;
+multiply = multiply *= num1;
 let divide = 100;
+divide = divide /= num1;
 
 // export 를 수정하지 마세요.
 export { increment, decrement, add, subtract, multiply, divide };
