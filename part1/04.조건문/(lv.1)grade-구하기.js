@@ -13,7 +13,16 @@
  */
 
 // TODO: getGrade 함수를 작성하세요.
-function getGrade(score) {}
+function getGrade(score) {
+  let grade;
+  
+  if(score >= 90) grade = "A";
+  else if(score < 90 && score >= 80) grade = "B";
+  else if(score < 80 && score >= 70) grade = "C";
+  else grade = "D";
+
+  return grade;
+}
 
 // export 를 수정하지 마세요.
 export { getGrade };

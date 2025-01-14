@@ -10,6 +10,10 @@
 
 function isEvenOrOdd(num) {
   // TODO
+  let answer = "";
+  if(num % 2 === 0) answer = "Even";
+  else answer = "Odd";
+  return answer;
 }
 
 // export 를 수정하지 마세요.
