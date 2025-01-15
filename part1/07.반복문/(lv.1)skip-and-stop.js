@@ -17,7 +17,15 @@
  *
  * @returns {number}
  */
-function skipAndStop() {}
+function skipAndStop() {
+  let answer = 0;
+  for(let number = 1; number <= 10 ; number++) {
+    if(number % 2 === 0) continue;
+    if(number > 7) break;
+    answer += number;
+  }
+  return answer;
+}
 
 // export를 수정하지 마세요.
 export { skipAndStop };
