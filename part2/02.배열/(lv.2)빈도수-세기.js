@@ -11,7 +11,22 @@
  */
 
 // TODO: 함수를 작성하세요.
-function getFrequency(arr) {}
+function getFrequency(arr) {
+  let answer = arr.reduce((acc,value) => {
+    const formattingByType = `${typeof value}_${value}`
+    if(acc[formattingByType]) acc[formattingByType]++;
+    else acc[formattingByType] = 1;
+    return acc;
+  },{});
+
+  answer = Object.entries(answer).reduce((acc,[key,value]) => {
+    const keyWithoutType = key.split('_')[1];
+    acc[keyWithoutType] = acc[keyWithoutType] ?? 0 + value;
+    return acc;
+  },{})
+
+  return answer;
+}
 
 // export 를 수정하지 마세요.
 export { getFrequency };

@@ -17,11 +17,21 @@ let topKeywordsCache = [];
 
 function updateTopKeywords(keywords) {
   // TODO
+  let keywordObjs = {};
+  keywords.forEach(keyword => {
+    keywordObjs[keyword] = (keywordObjs[keyword] || 0) + 1;
+  });
+
+  const sortedKeywords = Object.entries(keywordObjs)
+    .sort((a,b) => b[1] - a[1])
+    .map(keyword => keyword[0]);
+
+  return topKeywordsCache = sortedKeywords.slice(0,10);
 }
 
 function getTopKeywords() {
   // TODO
-  return [];
+  return topKeywordsCache;
 }
 
 // export를 수정하지 마세요.
