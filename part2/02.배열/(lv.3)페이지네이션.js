@@ -19,7 +19,8 @@ const posts = [
   { id: 5, title: "Example" },
 ];
 
-function getPage(pageNumber, perPage) {}
+function getPage(pageNumber, perPage) {
+}
 
 // export 를 수정하지 마세요.
 export { getPage, posts };
