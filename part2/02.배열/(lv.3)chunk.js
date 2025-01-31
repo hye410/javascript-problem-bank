@@ -10,7 +10,13 @@
  * @returns {any[][]}
  */
 
-function chunkArray(arr, size) {}
+function chunkArray(arr, size) {
+  let chunkArr = [];
+  for (let i = 0; i < arr.length; i += size) {
+    chunkArr.push(arr.slice(i, i + size));
+  }
+  return chunkArr;
+}
 
 // export 를 수정하지 마세요.
 export { chunkArray };
