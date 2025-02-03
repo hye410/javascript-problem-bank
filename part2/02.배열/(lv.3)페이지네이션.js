@@ -20,6 +20,10 @@ const posts = [
 ];
 
 function getPage(pageNumber, perPage) {
+  if (pageNumber < 1 || perPage < 1) return [];
+  const firstIdx = (pageNumber - 1) * perPage;
+  const endIdx = firstIdx + perPage;
+  return posts.slice(firstIdx, endIdx);
 }
 
 // export 를 수정하지 마세요.
