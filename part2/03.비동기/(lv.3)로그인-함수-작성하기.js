@@ -13,7 +13,14 @@
 
 import { loginRequest } from "../../part1/10.비동기/(lv.2)로그인-확인-함수";
 
-async function safeLogin(id, pw) {}
+async function safeLogin(id, pw) {
+  try {
+    const res = await loginRequest(id, pw);
+    return res;
+  } catch (error) {
+    return "error";
+  }
+}
 
 // export를 수정하지 마세요.
 export { safeLogin };
