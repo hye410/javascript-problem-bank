@@ -15,7 +15,17 @@ const inventory = [
   { id: 200, name: "Mouse", stock: 5 },
 ];
 
-function addProduct(newItem) {}
+function addProduct(newItem) {
+  const sameInventoryItem = inventory.find((item) => item.id === newItem.id);
+
+  if (sameInventoryItem) {
+    sameInventoryItem.stock += newItem.stock;
+  } else {
+    inventory.push(newItem);
+  }
+
+  return inventory;
+}
 
 // export를 수정하지 마세요.
 export { inventory, addProduct };
