@@ -12,6 +12,13 @@
 // TODO: 함수를 작성하세요 (예: toggleCase)
 function toggleCase(str) {
   // TODO
+  let toggleStr = "";
+  for (let string of str) {
+    string.toLocaleUpperCase() === string
+      ? (toggleStr += string.toLocaleLowerCase())
+      : (toggleStr += string.toLocaleUpperCase());
+  }
+  return toggleStr;
 }
 
 // export 를 수정하지 마세요.
