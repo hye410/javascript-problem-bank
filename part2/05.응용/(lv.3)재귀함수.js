@@ -9,7 +9,13 @@
  * @returns {number}
  */
 
-function factorial(n) {}
+function factorial(n) {
+  let acc = 1;
+  for (let i = n; i > 0; i--) {
+    acc = acc * i;
+  }
+  return acc;
+}
 
 // export 를 수정하지 마세요.
 export { factorial };
