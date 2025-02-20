@@ -28,7 +28,19 @@
  */
 
 // TODO: normalizeData 함수를 작성하세요.
-function normalizeData(data) {}
+function normalizeData(data) {
+  const _normalizeData = new Map();
+  let allIds = [];
+  data.forEach((value) => {
+    allIds.push(value.id);
+    _normalizeData.set(value.id, value);
+  });
+
+  return {
+    byId: Object.fromEntries(_normalizeData),
+    allIds,
+  };
+}
 
 // export를 수정하지 마세요.
 export { normalizeData };

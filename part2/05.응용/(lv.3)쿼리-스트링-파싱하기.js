@@ -10,6 +10,18 @@
  * @returns {object}
  */
 
-function parseQueryString(queryString) {}
+function parseQueryString(queryString) {
+  let parsedQuery = {};
+  const noQuestionMark = queryString.slice(1);
+  if (noQuestionMark) {
+    noQuestionMark.split("&").forEach((query) => {
+      const key = query.split("=")[0];
+      const value = query.split("=")[1] ?? "";
+      return (parsedQuery[key] = value);
+    });
+  }
+
+  return parsedQuery;
+}
 
 export { parseQueryString };
