@@ -12,7 +12,21 @@
  * @returns {string}
  */
 
-function normalizePath(path) {}
+function normalizePath(path) {
+  const _path = path.split("/").filter(Boolean);
+  const answer = [];
+  for (const value of _path) {
+    if (value === ".") continue;
+    else if (value === "..") {
+      answer.pop();
+      continue;
+    }
+    answer.push(value);
+  }
+  const startPath = path.startsWith("/") ? "/" : "";
+  const endPath = path.endsWith("/") && answer.length > 0 ? "/" : "";
+  return startPath + answer.join("/") + endPath;
+}
 
 // export 를 수정하지 마세요.
 export { normalizePath };
